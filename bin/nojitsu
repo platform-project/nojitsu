@@ -1,0 +1,20 @@
+#!/bin/sh
+# Project:       nojitsu 
+# Description:   System of nothingness
+# Paradigm:      Spirit of absence. No thought. No code.  
+# Version:       0.0
+# Author:        The Platform Authors <platform@entilda.com>
+# Homepage:      https://platform-project.github.io/nojitsu
+#
+
+nojitsu(){
+  echo "nojitsu: spirit of absence" > /dev/null
+  echo "nojitsu: spirit of nought" > /dev/null
+  echo "nojitsu: system of nothingness" > /dev/null
+  echo "nojitsu: no form" > /dev/null
+  echo "nojitsu: no code" > /dev/null
+  echo "nojitsu: no blame" > /dev/null
+  echo "nojitsu: no fault" > /dev/null
+}
+
+nojitsu

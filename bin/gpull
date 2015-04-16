@@ -1,0 +1,3 @@
+#!/bin/sh
+PLATFORM_PATH="/var/www/platform"
+cd $PLATFORM_PATH && git pull

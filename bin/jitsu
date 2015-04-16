@@ -1,0 +1,14 @@
+#!/bin/sh
+# Project:       jitsu 
+# Description:   System of somethingness
+# Paradigm:      Spirit of presence. Thought. Code.  
+# Version:       0.0
+# Author:        The Platform Authors <platform@entilda.com>
+# Homepage:      https://platform-project.github.io/nojitsu
+#
+
+jitsu(){
+  echo "jitsu: spirit of presence"
+}
+
+jitsu

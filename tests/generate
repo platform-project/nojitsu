@@ -1,0 +1,86 @@
+#!/bin/sh
+# Command:       generate
+# Project:       jitsu 
+# Description:   System of somethingness
+# Paradigm:      Spirit of presence. Thought. Code.  
+# Version:       0.0
+# Author:        The Platform Authors <platform@entilda.com>
+# Homepage:      https://platform-project.github.io/nojitsu
+#
+# generate:      create something
+# This script should be the helper executable script that builds and generates the structure of the system folder.
+# It should be able to perform elementary tasks such as create folder, create empty file (i.e. 0 byte file)
+# 
+# The below example shows how the platform project was created:
+#
+# mkdir /sandbox/system
+# mkdir /sandbox/repository
+# mkdir /sandbox/framework
+# touch /sandbox/system/README
+# touch /sandbox/system/TODO
+#
+# See tests folder for demonstrations
+
+if [ "$1" != "" ]
+then 
+  APP="$1"
+else
+  APP="."
+fi
+
+generate(){
+  generate_paths
+  generate_files
+}
+
+generate_paths(){
+  mkdir -p $APP/help
+  mkdir -p $APP/info
+  mkdir -p $APP/mirrors
+  mkdir -p $APP/networks
+
+  mkdir -p $APP/sandbox/system
+  mkdir -p $APP/sandbox/repository
+  mkdir -p $APP/sandbox/repository/code
+  mkdir -p $APP/sandbox/repository/software
+  mkdir -p $APP/sandbox/framework
+  mkdir -p $APP/sandbox/workspace
+
+  mkdir -p $APP/sandbox/workspace/applications
+  mkdir -p $APP/sandbox/workspace/builds
+  mkdir -p $APP/sandbox/workspace/projects
+  mkdir -p $APP/sandbox/workspace/repositories
+  mkdir -p $APP/sandbox/workspace/tests
+  mkdir -p $APP/sandbox/workspace/$APPprebuilds
+  mkdir -p $APP/sandbox/workspace/$APPtrash
+
+  mkdir -p $APP/servers
+  mkdir -p $APP/sites
+  mkdir -p $APP/sites/fonts
+  mkdir -p $APP/sites/icons
+  mkdir -p $APP/sites/images
+
+  mkdir -p $APP/snapshots
+  
+}
+
+generate_files(){
+  touch $APP/sandbox/system/README.md
+  touch $APP/sandbox/system/TODO.md
+
+  touch $APP/sandbox/repository/README.md
+  touch $APP/sandbox/repository/TODO.md
+
+  touch $APP/sandbox/framework/README.md
+  touch $APP/sandbox/framework/TODO.md
+
+  touch $APP/sandbox/workspace/README.md
+  touch $APP/sandbox/workspace/TODO.md
+}
+
+if [ "$1" != "" ]
+then 
+  generate $1
+else 
+  generate  
+fi

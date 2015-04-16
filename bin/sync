@@ -1,0 +1,36 @@
+#!/bin/bash
+PLATFORM_USER=`whoami`
+PLATFORM_USER_HOME="/home/$PLATFORM_USER"
+PLATFORM_SYNC_HOME="$PLATFORM_USER_HOME/.platform/sync"
+PLATFORM_UONE_HOME=$PLATFORM_USER_HOME/"Ubuntu One"
+PLATFORM_HOME=$PLATFORM_UONE_HOME/platform
+PLATFORM_SNAPSHOTS=$PLATFORM_HOME/snapshots
+platform_sync()
+{
+  platform_sync_rc
+  if [ ! -d "$PLATFORM_SYNC_HOME" ]
+  then
+  	mkdir -p $PLATFORM_SYNC_HOME
+  fi
+  cd $PLATFORM_SYNC_HOME && git clone http://git.entilda.com/platform.git platform && tar -jcf platform.pva  > /dev/null 2>&1
+
+  if [ ! -d "$PLATFORM_HOME" ]
+  then
+    mkdir -p $PLATFORM_HOME
+  fi
+
+  if [ ! -d "$PLATFORM_SNAPSHOTS" ]
+  then
+    mkdir -p $PLATFORM_SNAPSHOTS
+  fi
+  cp -var $PLATFORM_SYNC_HOME/platform.pva $PLATFORM_SNAPSHOTS
+}
+
+platform_sync_rc()
+{
+  if [ ! -d "$PLATFORM_UONE_HOME" ]
+  then
+  	mkdir -p $PLATFORM_UONE_HOME
+  fi
+  cp -var $PLATFORM_USER_HOME/.bashrc $PLATFORM_UONE_HOME/
+}

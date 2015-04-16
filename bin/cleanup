@@ -1,0 +1,67 @@
+#!/bin/sh
+# Command:       cleanup
+# Project:       nojitsu 
+# Description:   System of nothingness
+# Paradigm:      Spirit of nought. No thought. No code. No blame. No fault. 
+# Version:       0.0
+# Author:        The Platform Authors <platform@entilda.com>
+# Homepage:      https://platform-project.github.io/nojitsu
+#
+# cleanup:       undo your creation
+# This script should be the helper executable script that reverses and cleans up system structure created by generate.
+# It should be able to perform elementary tasks such as deleting a folder and deleting a file
+# 
+# The below example shows how the platform project was created:
+#
+# rm -rf /sandbox/system
+# rm -rf /sandbox/repository
+# rm -rf /sandbox/framework
+# rm -f /sandbox/system/README.md
+# rm -f /sandbox/system/TODO.md
+#
+# See tests folder for demonstrations
+
+if [ "$1" != "" ]
+then 
+  APP="$1"
+else
+  APP="."
+fi
+
+cleanup(){
+  cleanup_files
+  cleanup_paths
+}
+
+cleanup_files(){
+  echo $APP
+  rm -f $APP/sandbox/system/README.md
+  rm -f $APP/sandbox/system/TODO.md
+
+  rm -f $APP/sandbox/repository/README.md
+  rm -f $APP/sandbox/repository/TODO.md
+
+  rm -f $APP/sandbox/framework/README.md
+  rm -f $APP/sandbox/framework/TODO.md
+
+  rm -f $APP/sandbox/workspace/README.md
+  rm -f $APP/sandbox/workspace/TODO.md
+}
+
+cleanup_paths(){
+  rm -rf $APP/help
+  rm -rf $APP/info
+  rm -rf $APP/mirrors
+  rm -rf $APP/networks
+  rm -rf $APP/sandbox
+  rm -rf $APP/servers
+  rm -rf $APP/sites
+  rm -rf $APP/snapshots
+}
+
+if [ "$1" != "" ]
+then 
+  cleanup $1 && rm -rf $1
+else 
+  cleanup  
+fi
