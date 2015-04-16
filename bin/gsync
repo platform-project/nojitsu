@@ -1,5 +1,14 @@
-#!/bin/bash
-GIT_GHUB_URI="git://github.com/bileckme/platform"
+#!/bin/sh
+# Command:       gsync
+# Project:       jitsu 
+# Description:   System of somethingness
+# Paradigm:      Spirit of presence. Thought. Code.  
+# Version:       1.1
+# Author:        The Platform Authors <platform@entilda.com>
+# Homepage:      https://platform-project.github.io/nojitsu
+#
+# gsync:         keeps platform repositories in sync
+GIT_GHUB_URI="git://github.com/platform-project/platform"
 GIT_REPO_PATH="/var/www/git/ghub/platform.git"
 GIT_MIRROR_PATH="/var/www/git/platform.git"
 cd $GIT_REPO_PATH && git clone --bare $GIT_GHUB_URI && cp -var $GIT_REPO_PATH/platform/* . && rm -rf $GIT_REPO_PATH/platform && cp -var $GIT_REPO_PATH/* $GIT_MIRROR_PATH/

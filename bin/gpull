@@ -1,3 +1,13 @@
 #!/bin/sh
+# Command:       gpull
+# Project:       jitsu 
+# Description:   System of somethingness
+# Paradigm:      Spirit of presence. Thought. Code.  
+# Version:       1.1
+# Author:        The Platform Authors <platform@entilda.com>
+# Homepage:      https://platform-project.github.io/nojitsu
+#
+# gpull:         get the latest platform source 
+
 PLATFORM_PATH="/var/www/platform"
 cd $PLATFORM_PATH && git pull
