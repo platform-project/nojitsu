@@ -1,11 +1,13 @@
 #README
-nojitsu: The system of nothingness
+##nojitsu
+The system of nothingness
 
-Synopsis:
+###Synopsis:
  - Spirit of absence. No thought. No code. 
 
 
-jitsu:   The system of somethingness
+##jitsu   
+The system of somethingness
 
-Synopsis:
+###Synopsis:
  - Spirit of presence. Thought. Code. 
